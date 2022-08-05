@@ -1,0 +1,28 @@
+﻿<div class="wizard">
+    <div class="wizard-page-description-panel-wrapper">
+        <div class="wizard-page-description-panel">
+            <h3>{{$ctrl.wizardContext.pages[$ctrl.wizardContext.state.selectedSection.index].bannerTitle}}</h3>
+            <p>{{$ctrl.wizardContext.pages[$ctrl.wizardContext.state.selectedSection.index].bannerDescription}}</p>
+        </div>
+    </div>
+    <div class="wizard-readonly-message" align="center" ng-if="$ctrl.wizardContext.readonly">
+        <h2>{{"wizard_readonly_mode" | translate}}</h2>
+    </div>
+    <div class="wizard-content-wrapper">
+        <wizard-navigation-menu ng-if="$ctrl.wizardContext.pages.length > 1"
+                                menu-sections="$ctrl.wizardContext.menuSections"
+                                menu-link-states="$ctrl.wizardContext.state.menuLinkStates"
+                                selected-index="$ctrl.wizardContext.state.selectedSection.index"
+                                on-section-select="$ctrl.selectSection(index)">
+        </wizard-navigation-menu>
+        <div class="wizard-content" ng-transclude>
+        </div>
+    </div>
+    <wizard-navigation-buttons always-show-finish-button="true || !$ctrl.wizardContext.isNew"
+                               hide-finish-button="$ctrl.wizardContext.readonly"
+                               finish-clicked="$ctrl.finishClicked()"
+                               close-clicked="$ctrl.closeClicked()"
+                               on-select-section="$ctrl.selectSection(index)"
+                               state="$ctrl.wizardContext.state">
+    </wizard-navigation-buttons>
+</div>

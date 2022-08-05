@@ -1,0 +1,7 @@
+﻿<div class="input-container">
+    <wizard-input-label title="$ctrl.field.title" field-required="$ctrl.field.required"></wizard-input-label>
+    <div class="input-field-wrapper">
+        <input class="input-field" id="{{$ctrl.field.name}}" type="checkbox" aria-label="{{$ctrl.field.title}}" ng-model="$ctrl.model[$ctrl.field.name]" ng-disabled="$ctrl.field.readonly"/>
+        <label for="{{$ctrl.field.name}}"></label>
+    </div>
+</div>

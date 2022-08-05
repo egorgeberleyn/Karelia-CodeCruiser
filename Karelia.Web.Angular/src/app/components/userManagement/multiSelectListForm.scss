@@ -1,0 +1,11 @@
+.manage-items-form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .list-wrapper {
+    flex: 1;
+  }
+  .buttons-wrapper {
+    flex: 0 0 35px;
+  }
+}

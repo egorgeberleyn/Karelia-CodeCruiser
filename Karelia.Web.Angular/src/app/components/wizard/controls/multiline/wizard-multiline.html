@@ -1,0 +1,12 @@
+<div class="input-container">
+    <wizard-input-label title="$ctrl.field.title" field-required="$ctrl.field.required"></wizard-input-label>
+    <div class="input-field-wrapper">
+        <textarea class="input-field k-textbox multiline"
+               type="{{$ctrl.field.type}}"
+               name="{{$ctrl.field.name}}"
+               ng-model="model[$ctrl.field.name]"
+               custom-validation
+               rows="{{$ctrl.field.lineCount}}"
+               ng-readonly="$ctrl.field.readonly"></textarea>
+    </div>
+</div>

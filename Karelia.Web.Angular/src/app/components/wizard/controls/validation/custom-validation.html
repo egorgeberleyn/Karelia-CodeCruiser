@@ -1,0 +1,8 @@
+<div ng-messages="$ctrl.parentForm[$ctrl.field.name].$error" ng-show="$ctrl.parentForm[$ctrl.field.name].$touched" class="validation-errors">
+    <div ng-repeat="validator in $ctrl.field.validators">
+        <span class="async-validator-checking-message" ng-show="$ctrl.parentForm[$ctrl.field.name].$pending[validator.name]">{{ "validation_checking" | translate }}</span>
+        <div ng-message="{{validator.name}}">
+            {{validator.message}}
+        </div>
+    </div>
+</div>

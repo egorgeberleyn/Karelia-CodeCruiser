@@ -1,0 +1,4 @@
+import CodeBehindOfficeEquipmentModelWizardFactory from './codeBehind/codeBehindOfficeEquipmentModelWizardFactory';
+
+export default class OfficeEquipmentModelWizardFactory extends CodeBehindOfficeEquipmentModelWizardFactory {
+}

@@ -1,0 +1,11 @@
+<div class="input-container">
+  <wizard-input-label title="$ctrl.field.title" field-required="$ctrl.field.required"></wizard-input-label>
+  <div class="input-field-wrapper"
+       ng-disabled="$ctrl.field.readonly"
+       ng-class="{ 'input-field-has-error': $ctrl.parentForm[$ctrl.field.name].$invalid && $ctrl.parentForm[$ctrl.field.name].$touched }">
+    <input name="files"
+           ng-disabled="$ctrl.field.readonly"
+           type="file"/>
+    <div><img class="file-upload-preview-image"/></div>
+  </div>
+</div>

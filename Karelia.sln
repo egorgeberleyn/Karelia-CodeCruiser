@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karelia.WebAPI", "Karelia.WebAPI\Karelia.WebAPI.csproj", "{6FB82326-D6FA-4A4E-A4CA-82B5C6B9BD4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseScripts", "DatabaseScripts", "{2CBB7DDB-C915-48BC-8F5C-CBF511013C12}"
+	ProjectSection(SolutionItems) = preProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karelia.WebAPI.Contracts", "Karelia.WebAPI.Contracts\Karelia.WebAPI.Contracts.csproj", "{D3460F1A-D56E-4D69-AE87-050F54EBC01F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karelia.WebApiServer", "Karelia.WebApiServer\Karelia.WebApiServer.csproj", "{6FB4DD58-ABC5-404A-9EFB-2D35DA69D7FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karelia.Contracts", "Karelia.Contracts\Karelia.Contracts.csproj", "{91020DDA-9841-44CD-A2C6-5C5265B71F6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karelia.WebAPI.Controllers", "Karelia.WebAPI.Controllers\Karelia.WebAPI.Controllers.csproj", "{52E151ED-7A80-45EB-8163-A36D5890361E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karelia.WebAPI.DataAccess", "Karelia.WebAPI.DataAccess\Karelia.WebAPI.DataAccess.csproj", "{0AFA703C-B408-42DC-8490-5726A12506F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FB82326-D6FA-4A4E-A4CA-82B5C6B9BD4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FB82326-D6FA-4A4E-A4CA-82B5C6B9BD4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FB82326-D6FA-4A4E-A4CA-82B5C6B9BD4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FB82326-D6FA-4A4E-A4CA-82B5C6B9BD4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3460F1A-D56E-4D69-AE87-050F54EBC01F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3460F1A-D56E-4D69-AE87-050F54EBC01F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3460F1A-D56E-4D69-AE87-050F54EBC01F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3460F1A-D56E-4D69-AE87-050F54EBC01F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FB4DD58-ABC5-404A-9EFB-2D35DA69D7FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FB4DD58-ABC5-404A-9EFB-2D35DA69D7FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FB4DD58-ABC5-404A-9EFB-2D35DA69D7FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FB4DD58-ABC5-404A-9EFB-2D35DA69D7FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91020DDA-9841-44CD-A2C6-5C5265B71F6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91020DDA-9841-44CD-A2C6-5C5265B71F6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91020DDA-9841-44CD-A2C6-5C5265B71F6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91020DDA-9841-44CD-A2C6-5C5265B71F6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52E151ED-7A80-45EB-8163-A36D5890361E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E151ED-7A80-45EB-8163-A36D5890361E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E151ED-7A80-45EB-8163-A36D5890361E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E151ED-7A80-45EB-8163-A36D5890361E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AFA703C-B408-42DC-8490-5726A12506F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AFA703C-B408-42DC-8490-5726A12506F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AFA703C-B408-42DC-8490-5726A12506F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AFA703C-B408-42DC-8490-5726A12506F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3AADD745-22CF-4958-83E1-EA94F1B129B2}
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Validation.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45
+	EndGlobalSection
+EndGlobal

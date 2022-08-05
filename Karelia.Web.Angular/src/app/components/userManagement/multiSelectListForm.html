@@ -1,0 +1,14 @@
+<div class="manage-items-form">
+  <div class="list-wrapper">
+    <multi-select-list items="$ctrl.items" display-field="'Name'" value-field="'Checked'">
+    </multi-select-list>
+  </div>
+  <div class="buttons-wrapper">
+    <kendo-button ng-click="$ctrl.assignClicked()">
+      {{ "multiselect_list_form_submit" | translate }}
+    </kendo-button>
+    <kendo-button ng-click="$ctrl.cancelClicked()">
+      {{ "multiselect_list_form_cancel" | translate }}
+    </kendo-button>
+  </div>
+</div>

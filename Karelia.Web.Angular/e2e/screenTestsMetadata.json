@@ -1,0 +1,23 @@
+{
+	"screens" : {
+		 "CarModels" : { 
+			"displayName": "Модели"
+			}
+		,  "Cars" : { 
+			"displayName": "Машины"
+			}
+		,  "Works" : { 
+			"displayName": "Ремонты"
+			}
+		,  "Tasks" : { 
+			"displayName": "Задачи"
+			}
+		,  "ModelEquipments" : { 
+			"displayName": "Модели оргтехники"
+			}
+		,  "Office" : { 
+			"displayName": "Офисы"
+			}
+		
+	}
+}

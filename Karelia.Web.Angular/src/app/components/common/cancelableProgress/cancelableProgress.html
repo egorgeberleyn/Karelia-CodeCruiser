@@ -1,0 +1,10 @@
+<div class="confirmation-dialog-content">
+    <div class="confirmation-dialog-message">
+        <h4>{{$ctrl.message}}</h4>
+        <div kendo-progress-bar="progressBar" k-min="0" k-max="100" ng-model="$ctrl.progressValue" ng-if="$ctrl.showProgress"></div>
+        <div ng-if="$ctrl.showSpinner" class="k-loading-image spinner"></div>
+    </div>
+    <div class="confirmation-dialog-buttons-panel">
+        <kendo-button ng-click="$ctrl.cancelClicked()" ng-if="$ctrl.cancelText">{{$ctrl.cancelText}}</kendo-button>
+    </div>
+</div>

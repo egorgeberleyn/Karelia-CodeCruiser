@@ -1,0 +1,36 @@
+.k-splitter {
+  .k-scrollable {
+    overflow: hidden !important;
+  }
+  .k-splitbar {
+    border-top:  none; // there is grid on top
+  }
+}
+
+panel1, panel2 {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.mobile-collapse-splitter-button.k-button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 5px;
+  right: -3px;
+  width: 60px;
+  height: 60px;
+  opacity: 0.7;
+  border-radius: 50%;
+  i {
+    font-style: normal;
+    font-size: 17pt;
+  }
+}
+
+@media #{$wide} {
+  .mobile-collapse-splitter-button.k-button {
+    display: none;
+  }
+}

@@ -1,0 +1,76 @@
+.main-toolbar-right {
+  margin-right: -0.2em; // compensate k-widget margin
+}
+
+#mainMenuPanelBar {
+  overflow: auto; // add scroll for large menu
+}
+
+.k-popup {
+  z-index: 100;
+}
+
+.popup-menu-item{
+  display: flex;
+}
+
+.popup-menu-item > a{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+.popup-menu-item > a > img{
+  margin-right: 1em;
+}
+
+.popup-menu-wrapper > .k-list{
+  display: flex;
+  flex-direction: column;
+}
+
+.action-wrapper{
+  padding: 0 0.5em 0 0;
+}
+.action-wrapper .k-widget{
+  margin-left: 0;
+}
+/* left menu styles */
+.navigation-menu-wrapper {
+  @media #{$tablet} {
+    box-shadow: none !important; // disable shadow ... shadow used in mobile when popup
+  }
+  .navigation-left-menu {
+    width: 216px;
+    border: none;
+    height: 100% !important;
+  }
+}
+
+.main-toolbar .menu-button { // menu button
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media #{$mobile-isolate} {
+
+  .navigation-menu-wrapper {
+    z-index: 60;
+    position: absolute;
+    width: 216px;
+    height: calc(100% - 22px);
+    .navigation-left-menu {
+      z-index: 60;
+    }
+  }
+
+  .menu-content {
+    width: 100%;
+  }
+
+
+}

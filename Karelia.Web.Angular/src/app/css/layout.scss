@@ -1,0 +1,119 @@
+//.main-view
+body div[ui-view] {
+  height: 100%;
+}
+html, body{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  min-width: 300px;
+}
+
+body {
+  background-color: lightgray;
+}
+
+* {
+  box-sizing: content-box;
+  // can't use border-box, since kendo uses content-box
+  // can't use it in all places since kendo at some point uses border-box
+  // it brakes grid pager, but we need to set it the same for the whole app
+}
+
+  main-layout {
+    height: 100%;
+    .main {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      .main-toolbar {
+        flex-grow: 0;
+        flex-shrink: 0;
+      }
+
+      .working-area {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        flex-grow: 1;
+        padding: 10px;
+
+        .navigation-menu-wrapper {
+          margin-right: 10px;
+          margin-left: 0;
+          border-width: 1px;
+
+          .navigation-left-menu {
+            margin: 0; // remove k-widget margins
+          }
+        }
+
+        .menu-content {
+          width: 100%;
+          flex-grow: 1;
+          flex-shrink: 1;
+          flex-wrap: nowrap;
+        }
+      }
+
+    }
+  }
+
+  .split-control {
+    border: none; // border causes 1px gap to the right since splitter uses absolute position
+  }
+  .k-toolbar .k-widget.split-control {
+    margin: 0; // remove splitter margins (for main splitter) or it will brake grid width
+  }
+
+
+  .toolbar.k-toolbar {
+    &.k-widget { // using widget to get borders
+      border-bottom: none; // remove bottom border because grid has its own
+      margin: 0; // remove margins
+    }
+  }
+
+
+.full-width {
+  width: 100%;
+}
+
+screen, .screen{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.screen {
+  position: relative;
+}
+
+split-container{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.split-control {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+chart-block {
+  height: 100%;
+  width: 100%;
+  display: block;
+  .chart.k-chart {
+    height: 100%;
+    min-height: 100%;
+  }
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,23 @@
+<form class="login-form" novalidate name="loginForm">
+    <div ng-show="$ctrl.loading" class="k-loading-image"></div>
+    <div class="login-form-content">
+        <div class="input-container">
+            <label class="k-label">{{  ::$ctrl.emailCaption }}</label>
+            <input class="k-input" ng-model="$ctrl.model.email" placeholder="{{  ::$ctrl.emailCaption }}" ng-change="$ctrl.error = false">
+        </div>
+        <span class="login-form-error" ng-show="$ctrl.error">{{ $ctrl.error }}</span>
+    </div>
+    <div class="login-form-links">
+        <a class="login-form-link k-link"
+           ui-sref="login({ parameters: $ctrl.$stateParams.parameters })">{{ ::$ctrl.loginLinkCaption }}</a>
+    </div>    
+    <div class="login-form-button-panel hidden-client-link">
+        <input name="restore"
+               class="k-primary k-button"
+               type="submit"
+               value="{{  ::$ctrl.restoreButtonTitle }}"
+               ng-click="$ctrl.restorePassword($ctrl.model.email)"
+               ng-disabled="!$ctrl.model.email || $ctrl.loading"/>
+
+    </div>
+</form>

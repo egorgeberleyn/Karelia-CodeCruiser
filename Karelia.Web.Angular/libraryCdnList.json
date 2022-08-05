@@ -1,0 +1,82 @@
+{
+	"externals": [
+		{
+			"module": "jquery",
+			"global": "jQuery",
+			"entry": "https://code.jquery.com/jquery-3.3.1.min.js"
+		},
+		{
+			"module": "angular",
+			"global": "angular",
+			"entry": "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"
+		},
+		{
+			"module": "angular-messages",
+			"entry": "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-messages.min.js"
+		},
+		{
+			"module": "angular-ui-router",
+			"entry": "https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"
+		},
+		{
+			"module": "angular-translate",
+			"entry": "https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.17.1/angular-translate.min.js"
+		},
+		{
+			"module": "angular-translate-loader-static-files",
+			"entry": "https://cdnjs.cloudflare.com/ajax/libs/angular-translate-loader-static-files/2.17.1/angular-translate-loader-static-files.min.js"
+		},
+		{
+			"module": "angular-css",
+			"entry": "https://cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.8/angular-css.min.js"
+		},
+		{
+			"module": "moment",
+			"global": "moment",
+			"entry": "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"
+		},
+		{
+			"module": "numeral",
+			"global": "numeral",
+			"entry": "https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"
+		},
+		{
+			"module": "kendo",
+			"entry": "https://kendo.cdn.telerik.com/2017.1.223/js/kendo.all.min.js"
+		},
+		{
+			"module": "kendoCss",
+			"entry": {
+				"path": "https://kendo.cdn.telerik.com/2017.1.223/styles/kendo.common.min.css",
+				"type": "css"
+			}
+		},
+		{
+			"module": "file-saver",
+			"global": "saveAs",
+			"entry": "https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"
+		},
+		{
+			"module": "pdf.js-viewer",
+			"global": "pdf.js-viewer",
+			"entry": "https://cdn.jsdelivr.net/npm/pdf.js-viewer@1.6.211/pdf.js"
+		},
+		{
+			"module": "pdf.js-viewer-css",
+			"entry": {
+				"path": "https://cdn.jsdelivr.net/npm/pdf.js-viewer@1.6.211/viewer.css",
+				"type": "css"
+			}
+		},
+		{
+			"module": "pdf.js-viewer-worker",
+			"global": "pdf.js-viewer-worker",
+			"entry": "https://cdn.jsdelivr.net/npm/pdf.js-viewer@1.6.211/pdf.worker.js"
+		},
+		{
+			"module": "angular-pdfjs-viewer",
+			"global": "angular-pdfjs-viewer",
+			"entry": "https://cdn.jsdelivr.net/npm/angular-pdfjs-viewer@2.0.1/dist/angular-pdfjs-viewer.min.js"
+		}
+	]
+}

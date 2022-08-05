@@ -1,0 +1,34 @@
+﻿<div class="main">
+    <div class="main-toolbar k-toolbar k-widget">
+        <span class="main-toolbar-left">
+            <span class="menu-button-wrapper">
+                <kendo-button ng-click="$ctrl.menuClicked()" class="menu-button icon-button"></kendo-button>
+            </span>
+            <a class="logo-wrapper k-button" href="/">
+				<span>{{ $ctrl.appTitle }}</span>
+            </a>
+        </span>
+        <span class="main-toolbar-center">
+			<div class="logo-cc">
+				<a href="http://code-cruiser.ru">
+				<div class="logo-label">powered by</div>
+				<img class="logo" src="../../../assets/img/logo.svg">
+				<div class="logo-label">cruiser</div>
+				</a>
+		     </div>
+            <span class="action-wrapper" ng-repeat="action in $ctrl.mainToolbarActions">
+                <menu-actions root="action"></menu-actions>
+            </span>
+        </span>
+        <span class="main-toolbar-right action-wrapper">
+            <menu-actions root="$ctrl.rightMenu"></menu-actions>
+        </span>
+    </div>
+
+    <div class="working-area k-toolbar">
+      <div class="navigation-menu-wrapper k-widget k-popup" ng-show="$ctrl.isMenuOpened">
+        <ul id="mainMenuPanelBar" kendo-panel-bar k-options="$ctrl.mainMenuPanelOptions" class="navigation-left-menu"></ul>
+      </div>
+      <div class="menu-content" ng-class="{ 'full-width' : !$ctrl.isMenuOpened} " ui-view="menuContent"></div>
+    </div>
+</div>

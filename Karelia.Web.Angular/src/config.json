@@ -1,0 +1,15 @@
+﻿{
+  "baseUrl": "http://localhost:9000/",
+  "appTitle": "Karelia",
+  "appName": "Karelia",
+  "clientLink" : "",
+  "allowRegistration": "False",
+  "allowPasswordRestore": "False",
+  "defaultCulture": "en-US",
+  "useCDN": "True",
+  "defaultSkinName": "Blue Opal",
+  "locale": {
+    "defaultCulture": "en-US",
+    "defaultDecimalSeparator": "."
+  }
+}

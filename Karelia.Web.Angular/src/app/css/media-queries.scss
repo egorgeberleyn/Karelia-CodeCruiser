@@ -1,0 +1,15 @@
+// | $mobile-isolate -->|
+//                      | $tablet-isolate -->|
+//                                           | $wide-isolate ---->|
+//                      | $tablet --------------------------------------------->
+//                                           | $wide -------------------------->
+//                                                                | $huge ----->
+//
+// Isolate with min/max.
+$mobile-isolate : "screen and (max-width: 30em)"; // or 45
+$tablet-isolate : "screen and (min-width: 30.0625em) and (max-width: 75em)"; //60 ->75
+$wide-isolate   : "screen and (min-width: 75.0625em) and (max-width: 120em)";
+// Min width only.
+$tablet         : "screen and (min-width: 30.0625em)";
+$wide           : "screen and (min-width: 75.0625em)";
+$huge           : "screen and (min-width: 120.0625em)";

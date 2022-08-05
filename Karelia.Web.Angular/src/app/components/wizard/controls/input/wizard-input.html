@@ -1,0 +1,11 @@
+﻿<div class="input-container">
+    <wizard-input-label title="$ctrl.field.title" field-required="$ctrl.field.required"></wizard-input-label>
+    <div class="input-field-wrapper">
+        <input class="input-field k-textbox"
+               type="{{$ctrl.field.type}}"
+               name="{{$ctrl.field.name}}"
+               ng-model="model[$ctrl.field.name]"
+               custom-validation
+               ng-readonly="$ctrl.field.readonly"/>
+    </div>
+</div>

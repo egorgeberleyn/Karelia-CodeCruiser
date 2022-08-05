@@ -1,0 +1,124 @@
+grid-block {
+  position: absolute;
+  top: 0;
+  bottom: 2px; // borders compensation
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+grid {
+  height: 100%;
+  position: relative;
+  display: flex;
+  .k-widget {
+    line-height: 2em !important; // overrided by common .k-toolbar .k-widget, since main area is toolbar it brakes grid
+  }
+  .k-header {
+    line-height: normal;
+  }
+  &.has-toolbar {
+    height: calc(100% - #{$toolbar_height});
+  }
+}
+
+grid > .k-grid{
+  width: calc(100% - 2px); // compensation for borders, for border-box works differently
+  height: 100%;
+}
+
+.k-grid {
+  &.k-widget, .k-widget {
+    margin: 0; // remove margins form widgets in grid
+  }
+}
+
+/*Removed vertical scroll form all grids http://docs.telerik.com/kendo-ui/web/grid/appearance
+    be careful b/c it's doesn't work and for whis we need additional add style to grid directive... kendo is so kendo =( */
+.k-grid .k-grid-header {
+  /* padding: 0 !important; */
+}
+.k-grid .k-grid-content {
+  overflow-y: visible;
+  /*border-left: 1px solid #e6e6e6;*/
+}
+.k-grid tr td {
+  overflow: hidden;
+}
+.k-menu .k-item.k-first {
+  border: none;
+}
+.k-link:not(.k-state-disabled):hover>.k-i-arrow-e, .k-state-hover>.k-i-arrow-e, .k-state-hover>*>.k-i-arrow-e, .k-button:not(.k-state-disabled):hover .k-i-arrow-e, .k-textbox:hover .k-i-arrow-e, .k-button:active .k-i-arrow-e{
+  //background-position: 0 -16px;
+  // down know what it is ..... disabling
+}
+
+.grid-context-menu-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.k-link.context-action.k-item {
+  cursor: pointer;
+  a {
+    span {
+      margin-left: 0.2em;
+    }
+  }
+}
+
+.grid-small {
+  .k-pager-sizes {
+    display: none;
+  }
+}
+@media #{$tablet-isolate},  #{$mobile-isolate} {
+  .k-pager-info {
+    display: none;
+  }
+}
+
+.k-detail-cell {
+  padding: 0.2em;
+}
+
+.grid-row-details {
+  margin-left: -2em;
+}
+
+.grid-row-details ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.8em;
+}
+
+.k-i-collapse:focus, .k-i-expand:focus {
+  outline: none;
+}
+
+.grid-row-details ul li {
+  margin: 0;
+  line-height: 1em;
+}
+
+.grid-row-details label {
+  display:inline-block;
+  width: 100px;
+  padding-right: 10px;
+  text-align: right;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.not-wrap-cell-data.k-grid {
+    td {
+      white-space: nowrap;
+    }
+}
+
+
+
+

@@ -1,0 +1,18 @@
+﻿<div class="clearable-input-wrapper"
+        ng-class="{'empty': !$ctrl.value}">
+<input name="searchString"
+       class="k-textbox clearable"
+       type="text" placeholder="{{ 'quick_search_filter_placeholder' | translate}}"
+       ng-model="$ctrl.value"
+       ng-change="$ctrl.textChanged()"
+       ng-keypress="$ctrl.keyPressed($event)" />
+       <button class="clear-button k-block" ng-click="$ctrl.clearClicked()">
+                <i class="fas fa-times"></i>
+        </button>
+</div>
+
+<select kendo-drop-down-list="select"
+        k-options="$ctrl.options"
+        k-ng-model="$ctrl.selectedField"
+        class="quick-search-field-chooser"></select>
+

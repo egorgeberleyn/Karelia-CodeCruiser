@@ -1,0 +1,12 @@
+<div class="multi-select-list-wrapper">
+  <ul class="multi-select-list" >
+    <li ng-repeat="item in $ctrl.items" class="multi-select-list-item">
+      <span>
+        <label for="{{item[$ctrl.displayField]}}">
+          <input name="{{item[$ctrl.displayField]}}" ng-change="$ctrl.onCheckedChange()" type="checkbox" ng-model="item[$ctrl.valueField]" />
+            {{ item[$ctrl.displayField] }}
+        </label>
+      </span>
+    </li>
+  </ul>
+</div>

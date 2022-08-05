@@ -1,0 +1,18 @@
+<div class="split-control"
+     k-resize="$ctrl.onResize"
+     k-panes="{{$ctrl.panes}}"
+     k-orientation="$ctrl.orientation"
+     k-collapse="$ctrl.collapse"
+     k-expand="$ctrl.expand"
+     kendo-splitter k-ng-delay="$ctrl.created" >
+  <div class="paneWrapper" context-state="$ctrl.contextState" settings="$ctrl.settings.panel1" ng-transclude="panel1"></div>
+  <div class="paneWrapper" context-state="$ctrl.contextState" settings="$ctrl.settings.panel2" ng-transclude="panel2"></div>
+</div>
+
+<button class="mobile-collapse-splitter-button k-button k-state-active"
+    ng-if="$ctrl.showCollapseButton"
+   ng-click="$ctrl.collapseClicked()">
+   <i class="fas"
+      ng-class="{ 'fa-minus-square': !$ctrl.collapsed, 'fa-plus-square':  $ctrl.collapsed}"></i>
+  </i>
+</button>

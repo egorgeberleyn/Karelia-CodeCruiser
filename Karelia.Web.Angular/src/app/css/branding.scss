@@ -1,0 +1,32 @@
+
+.logo-wrapper img{
+// display: inline-block;
+ // vertical-align: middle;
+//  height:100%;
+}
+.logo-wrapper{
+  //display: inline-block;
+//  margin-right: 1.2em;
+  text-decoration: none;
+
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  font-size: 25pt;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: fantasy;
+  height: 45px;
+  border: none;
+
+
+  span {
+
+  }
+
+}
+//@media (max-width: 470px){
+//  .logo-wrapper{
+//    display: none;
+//  }
+//}

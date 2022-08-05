@@ -1,0 +1,18 @@
+﻿<toolbar actions="$ctrl.toolbarActions" ng-if="$ctrl.settings.hasToolbar"
+         show-quick-search="$ctrl.settings.hasQuickFilter"
+         on-quick-search="$ctrl.onQuickSearch(text, selectedField)"
+         quick-search-fields="$ctrl.quickSearchFields">
+</toolbar>
+<grid options="$ctrl.settings"
+      ng-class="{'has-toolbar': $ctrl.settings.hasToolbar}"
+      auto-bind="$ctrl.autoBind"
+      screen-service="$ctrl.screenService"
+      context-actions="$ctrl.contextActions"
+      on-page-changed="$ctrl.onPageChanged(pageSize, page)"
+      on-sort-changed="$ctrl.onSortChanged(sort)"
+      on-filter-changed="$ctrl.onFilterChanged(filter)"
+      data="$ctrl.data"
+      multiply-sorting="$ctrl.multiplySorting"
+      on-file-link-clicked="$ctrl.onFileLinkClicked(fileId, fileName)"
+      on-select-row="$ctrl.onSelectRow(selectedItem)"/>
+

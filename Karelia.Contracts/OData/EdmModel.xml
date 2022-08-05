@@ -1,0 +1,337 @@
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:DataServices>
+  <Schema Namespace="BusinessFramework.Contracts.Files" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <ComplexType Name="FileLinkBase" Abstract="true">
+        <Property Name="Id" Type="Edm.Int32" />
+        <Property Name="FileName" Type="Edm.String" />
+        <Property Name="Length" Type="Edm.Int64" />
+        <Property Name="CreateDate" Type="Edm.DateTimeOffset" />
+        <Property Name="UploadLink" Type="Edm.String" />
+      </ComplexType>
+      </Schema>
+    <Schema Namespace="BusinessFramework.WebAPI.Contracts.Files" Alias="Files" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <ComplexType Name="FileLink" BaseType="BusinessFramework.Contracts.Files.FileLinkBase">
+      </ComplexType>
+    </Schema>
+
+    <Schema Namespace="Karelia.WebAPI.Contracts.DataObjects" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityType Name="CarWorkType">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="Name" Type="Edm.String" />
+      </EntityType>      
+      <EntityType Name="Office">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="Adress" Type="Edm.String" />
+      </EntityType>      
+      <EntityType Name="CarArrivalReasonType">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="Name" Type="Edm.String" />
+      </EntityType>      
+      <EntityType Name="SysResetPasswordToken">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="IsExecuted" Type="Edm.Boolean" />
+          <Property Name="Token" Type="Edm.String" />
+          <Property Name="UserId" Type="Edm.Int32" />
+          <Property Name="ValidFrom" Type="Edm.DateTimeOffset" />
+      </EntityType>      
+      <EntityType Name="SysRole">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="Description" Type="Edm.String" />
+          <Property Name="IsOwnByUser" Type="Edm.Boolean" />
+          <Property Name="IsSystem" Type="Edm.Boolean" />
+          <Property Name="Name" Type="Edm.String" />
+          <Property Name="OwnerUserID" Type="Edm.Int32" />
+      </EntityType>      
+      <EntityType Name="CarServiceWork">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="CarServiceId" Type="Edm.Int32" />
+          <Property Name="CarWorkTypeId" Type="Edm.Int32" />
+          <Property Name="Comments" Type="Edm.String" />
+      </EntityType>      
+      <EntityType Name="Car">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="CarModelId" Type="Edm.Int32" />
+          <Property Name="Description" Type="Edm.String" />
+          <Property Name="Number" Type="Edm.String" />
+      </EntityType>      
+      <EntityType Name="SubTask">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="Description" Type="Edm.String" />
+          <Property Name="Name" Type="Edm.String" />
+          <Property Name="Sequence" Type="Edm.Int32" />
+          <Property Name="TaskId" Type="Edm.Int32" />
+      </EntityType>      
+      <EntityType Name="CarModelPart">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="CarModelId" Type="Edm.Int32" />
+          <Property Name="Name" Type="Edm.String" />
+          <Property Name="Price" Type="Edm.Decimal" />
+      </EntityType>      
+      <EntityType Name="SysOperationLock">
+        <Key>
+          <PropertyRef Name="OperationName" />
+          <PropertyRef Name="OperationContext" />
+        </Key>
+          <Property Name="OperationName" Type="Edm.String" />
+          <Property Name="OperationContext" Type="Edm.String" />
+          <Property Name="AquiredTime" Type="Edm.DateTimeOffset" />
+          <Property Name="ExpirationTime" Type="Edm.DateTimeOffset" />
+          <Property Name="MachineName" Type="Edm.String" />
+          <Property Name="ProcessId" Type="Edm.Int32" />
+          <Property Name="UserId" Type="Edm.Int32" />
+      </EntityType>      
+      <EntityType Name="CarService">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="CarArrivalReasonTypeId" Type="Edm.Int32" />
+          <Property Name="CarId" Type="Edm.Int32" />
+          <Property Name="Conclusion" Type="Edm.String" />
+          <Property Name="Defect" Type="Edm.String" />
+          <Property Name="EndDate" Type="Edm.DateTimeOffset" />
+          <Property Name="Odometer" Type="Edm.Int32" />
+          <Property Name="StartDate" Type="Edm.DateTimeOffset" />
+      </EntityType>      
+      <EntityType Name="OfiiceEmployee">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="Name" Type="Edm.String" />
+          <Property Name="OfficeId" Type="Edm.Int32" />
+      </EntityType>      
+      <EntityType Name="SysSetting">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="SettingPropertyId" Type="Edm.Int32" />
+          <Property Name="StringValue" Type="Edm.String" />
+          <Property Name="UserId" Type="Edm.Int32" />
+      </EntityType>      
+      <EntityType Name="MainTask">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="Comments" Type="Edm.String" />
+          <Property Name="CreationDate" Type="Edm.DateTimeOffset" />
+          <Property Name="EmployeeId" Type="Edm.Int32" />
+          <Property Name="EndDate" Type="Edm.DateTimeOffset" />
+          <Property Name="IsCompleted" Type="Edm.Boolean" />
+          <Property Name="Name" Type="Edm.String" />
+      </EntityType>      
+      <EntityType Name="OfficeEquipment">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="Description" Type="Edm.String" />
+          <Property Name="InventoryNumber" Type="Edm.String" />
+          <Property Name="OfficeEmployeeId" Type="Edm.Int32" />
+          <Property Name="OfficeEquipmentModelId" Type="Edm.Int32" />
+          <Property Name="OfficeId" Type="Edm.Int32" />
+          <Property Name="PlacementDate" Type="Edm.DateTimeOffset" />
+          <Property Name="Quontity" Type="Edm.Int32" />
+      </EntityType>      
+      <EntityType Name="CarServicePart">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="CarModelPartId" Type="Edm.Int32" />
+          <Property Name="CarServiceId" Type="Edm.Int32" />
+          <Property Name="Quantity" Type="Edm.Int32" />
+      </EntityType>      
+      <EntityType Name="MethodicalToolkit">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="Name" Type="Edm.String" />
+      </EntityType>      
+      <EntityType Name="SysSettingProperty">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="DefaultType" Type="Edm.String" />
+          <Property Name="Description" Type="Edm.String" />
+          <Property Name="GroupName" Type="Edm.String" />
+          <Property Name="IsManaged" Type="Edm.Boolean" />
+          <Property Name="IsOverridable" Type="Edm.Boolean" />
+          <Property Name="Name" Type="Edm.String" />
+          <Property Name="UIEditorType" Type="Edm.String" />
+      </EntityType>      
+      <EntityType Name="CarModel">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="FuelConsumption" Type="Edm.Double" />
+          <Property Name="Name" Type="Edm.String" />
+      </EntityType>      
+      <EntityType Name="MethodicalToolkitFile">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="Description" Type="Edm.String" />
+          <Property Name="MethodicalToolkitId" Type="Edm.Int32" />
+          <Property Name="Name" Type="Edm.String" />
+      </EntityType>      
+      <EntityType Name="OfficeEquipmentModel">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="Name" Type="Edm.String" />
+      </EntityType>      
+      <EntityType Name="MainTaskQuery">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="Comments" Type="Edm.String" />
+          <Property Name="CreationDate" Type="Edm.DateTimeOffset" />
+          <Property Name="Employee_Name" Type="Edm.String" />
+          <Property Name="EmployeeId" Type="Edm.Int32" />
+          <Property Name="EndDate" Type="Edm.DateTimeOffset" />
+          <Property Name="IsCompleted" Type="Edm.Boolean" />
+          <Property Name="Name" Type="Edm.String" />
+      </EntityType>      
+      <EntityType Name="CarServicePartQuery">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="CarModelPart_Name" Type="Edm.String" />
+          <Property Name="CarModelPart_Price" Type="Edm.Decimal" />
+          <Property Name="CarModelPartId" Type="Edm.Int32" />
+          <Property Name="CarServiceId" Type="Edm.Int32" />
+          <Property Name="Quantity" Type="Edm.Int32" />
+      </EntityType>      
+      <EntityType Name="CarServiceQuery">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="CarArrivalReasonType_Name" Type="Edm.String" />
+          <Property Name="CarArrivalReasonTypeId" Type="Edm.Int32" />
+          <Property Name="CarId" Type="Edm.Int32" />
+          <Property Name="Conclusion" Type="Edm.String" />
+          <Property Name="Defect" Type="Edm.String" />
+          <Property Name="EndDate" Type="Edm.DateTimeOffset" />
+          <Property Name="Odometer" Type="Edm.Int32" />
+          <Property Name="StartDate" Type="Edm.DateTimeOffset" />
+      </EntityType>      
+      <EntityType Name="SubTaskQuery">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="Description" Type="Edm.String" />
+          <Property Name="MainTask_Employee_Name" Type="Edm.String" />
+          <Property Name="Name" Type="Edm.String" />
+          <Property Name="Sequence" Type="Edm.Int32" />
+          <Property Name="TaskId" Type="Edm.Int32" />
+      </EntityType>      
+      <EntityType Name="CarServiceWorkQuery">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="CarServiceId" Type="Edm.Int32" />
+          <Property Name="CarWorkType_Name" Type="Edm.String" />
+          <Property Name="CarWorkTypeId" Type="Edm.Int32" />
+          <Property Name="Comments" Type="Edm.String" />
+      </EntityType>      
+      <EntityType Name="OfficeEquipmentQuery">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="Description" Type="Edm.String" />
+          <Property Name="InventoryNumber" Type="Edm.String" />
+          <Property Name="OfficeEquipmentModel_Name" Type="Edm.String" />
+          <Property Name="OfficeEquipmentModelId" Type="Edm.Int32" />
+          <Property Name="OfficeId" Type="Edm.Int32" />
+          <Property Name="OfiiceEmployee_Name" Type="Edm.String" />
+          <Property Name="PlacementDate" Type="Edm.DateTimeOffset" />
+          <Property Name="Quontity" Type="Edm.Int32" />
+      </EntityType>      
+      <EntityType Name="CarQuery">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+          <Property Name="Id" Type="Edm.Int32" />
+          <Property Name="CarModel_FuelConsumption" Type="Edm.Double" />
+          <Property Name="CarModel_Name" Type="Edm.String" />
+          <Property Name="CarModelId" Type="Edm.Int32" />
+          <Property Name="Description" Type="Edm.String" />
+          <Property Name="Number" Type="Edm.String" />
+      </EntityType>      
+      
+    </Schema>
+    <Schema Namespace="Services" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityContainer Name="Container">
+        <EntitySet Name="CarWorkType" EntityType="Karelia.WebAPI.Contracts.DataObjects.CarWorkType"/>
+        <EntitySet Name="Office" EntityType="Karelia.WebAPI.Contracts.DataObjects.Office"/>
+        <EntitySet Name="CarArrivalReasonType" EntityType="Karelia.WebAPI.Contracts.DataObjects.CarArrivalReasonType"/>
+        <EntitySet Name="SysResetPasswordToken" EntityType="Karelia.WebAPI.Contracts.DataObjects.SysResetPasswordToken"/>
+        <EntitySet Name="SysRole" EntityType="Karelia.WebAPI.Contracts.DataObjects.SysRole"/>
+        <EntitySet Name="CarServiceWork" EntityType="Karelia.WebAPI.Contracts.DataObjects.CarServiceWork"/>
+        <EntitySet Name="Car" EntityType="Karelia.WebAPI.Contracts.DataObjects.Car"/>
+        <EntitySet Name="SubTask" EntityType="Karelia.WebAPI.Contracts.DataObjects.SubTask"/>
+        <EntitySet Name="CarModelPart" EntityType="Karelia.WebAPI.Contracts.DataObjects.CarModelPart"/>
+        <EntitySet Name="SysOperationLock" EntityType="Karelia.WebAPI.Contracts.DataObjects.SysOperationLock"/>
+        <EntitySet Name="CarService" EntityType="Karelia.WebAPI.Contracts.DataObjects.CarService"/>
+        <EntitySet Name="OfiiceEmployee" EntityType="Karelia.WebAPI.Contracts.DataObjects.OfiiceEmployee"/>
+        <EntitySet Name="SysSetting" EntityType="Karelia.WebAPI.Contracts.DataObjects.SysSetting"/>
+        <EntitySet Name="MainTask" EntityType="Karelia.WebAPI.Contracts.DataObjects.MainTask"/>
+        <EntitySet Name="OfficeEquipment" EntityType="Karelia.WebAPI.Contracts.DataObjects.OfficeEquipment"/>
+        <EntitySet Name="CarServicePart" EntityType="Karelia.WebAPI.Contracts.DataObjects.CarServicePart"/>
+        <EntitySet Name="MethodicalToolkit" EntityType="Karelia.WebAPI.Contracts.DataObjects.MethodicalToolkit"/>
+        <EntitySet Name="SysSettingProperty" EntityType="Karelia.WebAPI.Contracts.DataObjects.SysSettingProperty"/>
+        <EntitySet Name="CarModel" EntityType="Karelia.WebAPI.Contracts.DataObjects.CarModel"/>
+        <EntitySet Name="MethodicalToolkitFile" EntityType="Karelia.WebAPI.Contracts.DataObjects.MethodicalToolkitFile"/>
+        <EntitySet Name="OfficeEquipmentModel" EntityType="Karelia.WebAPI.Contracts.DataObjects.OfficeEquipmentModel"/>
+        <EntitySet Name="MainTaskQuery" EntityType="Karelia.WebAPI.Contracts.DataObjects.MainTaskQuery"/>
+        <EntitySet Name="CarServicePartQuery" EntityType="Karelia.WebAPI.Contracts.DataObjects.CarServicePartQuery"/>
+        <EntitySet Name="CarServiceQuery" EntityType="Karelia.WebAPI.Contracts.DataObjects.CarServiceQuery"/>
+        <EntitySet Name="SubTaskQuery" EntityType="Karelia.WebAPI.Contracts.DataObjects.SubTaskQuery"/>
+        <EntitySet Name="CarServiceWorkQuery" EntityType="Karelia.WebAPI.Contracts.DataObjects.CarServiceWorkQuery"/>
+        <EntitySet Name="OfficeEquipmentQuery" EntityType="Karelia.WebAPI.Contracts.DataObjects.OfficeEquipmentQuery"/>
+        <EntitySet Name="CarQuery" EntityType="Karelia.WebAPI.Contracts.DataObjects.CarQuery"/>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

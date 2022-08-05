@@ -1,0 +1,13 @@
+﻿<div class="input-container">
+    <wizard-input-label title="$ctrl.field.title" field-required="$ctrl.field.required"></wizard-input-label>
+    <div class="input-field-wrapper">
+        <input class="input-field"
+               name="{{$ctrl.field.name}}"
+               kendo-auto-complete
+               ng-readoly="$ctrl.field.readonly"
+               ng-model="$ctrl.model[$ctrl.field.name]"
+               k-options="$ctrl.options"
+               custom-validation />
+    </div>
+</div>
+

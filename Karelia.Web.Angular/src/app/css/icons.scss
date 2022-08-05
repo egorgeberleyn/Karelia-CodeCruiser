@@ -1,0 +1,35 @@
+.main-toolbar .menu-button { // menu button
+  @include insertIconBefore('\f0c9', 20pt);
+}
+
+.action-create-new.icon-default { @include insertIconBefore('\f055'); }
+.action-view.icon-default { @include insertIconBefore('\f06e'); }
+.action-edit.icon-default { @include insertIconBefore('\f040'); }
+.action-delete.icon-default { @include insertIconBefore('\f014'); }
+.action-refresh.icon-default { @include insertIconBefore('\f021'); }
+.icon-printer, .action-open-report.icon-default { @include insertIconBefore('\f02f'); }
+.action-custom.icon-default { @include insertIconBefore('\f0e7'); }
+			
+.grid-context-menu-button{
+  @include insertIconBefore('\f013', 15pt);
+}
+
+
+@media #{$mobile-isolate} {
+  .main-toolbar-right { // collapse right menu to button
+    .k-menu > .k-item > .k-link {
+      @include insertIconBefore('\f007', 15pt);
+    }
+  }
+}
+
+
+.toolbar-menu-button-wrapper {
+  .toolbar-button {
+    @include insertIconBefore('\f013', 17pt);
+  }
+}
+
+.fas {
+  font-family: "FontAwesome";
+}

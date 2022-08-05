@@ -1,0 +1,19 @@
+﻿<div class="input-container">
+    <wizard-input-label title="$ctrl.field.title" field-required="$ctrl.field.required"></wizard-input-label>
+    <div class="input-field-wrapper" ng-class="{ 'input-field-has-error': $ctrl.parentForm[$ctrl.field.name].$invalid && $ctrl.parentForm[$ctrl.field.name].$touched }">
+        <select class="input-field" kendo-combo-box="select"
+                k-data-text-field="'{{$ctrl.field.displayField}}'"
+                k-data-value-field="'{{$ctrl.field.valueField}}'"
+                k-ng-model="model[$ctrl.field.name]"
+                k-value-primitive="true"
+                k-filter="'contains'"
+                k-delay="{{$ctrl.field.delay? $ctrl.field.delay: 100}}"
+                k-min-length="{{$ctrl.field.minLength? $ctrl.field.minLength: 1}}"
+								ng-blur="$ctrl.blur()"
+								k-select="$ctrl.onSelect.bind($ctrl)"
+                k-ng-readonly="$ctrl.field.readonly"
+                k-auto-bind="{{ $ctrl.model[$ctrl.field.name] !== undefined? 'true': 'false' }}"
+                k-data-source="$ctrl.dataSource"></select>
+        <input name="{{$ctrl.field.name}}" custom-validation type="hidden" ng-model="model[$ctrl.field.name]"/>
+    </div>
+</div>

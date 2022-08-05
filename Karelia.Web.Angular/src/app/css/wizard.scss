@@ -1,0 +1,152 @@
+﻿/*Common*/
+.wizard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navigation-wizard-menu {
+  width: 200px;
+  align-self: stretch;
+  height: 100%;
+  min-height: 100%;
+}
+
+.wizard-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.wizard-content {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+}
+
+wizard-page {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.wizard-page-description-panel-wrapper {
+  flex: 0 0 100px;
+}
+
+div.k-window-content {
+  overflow: hidden;
+}
+
+.wizard-readonly-message {
+  flex: 0 0 50px;
+  width: 100%;
+  background: antiquewhite;
+}
+
+.wizard-page-description-panel {
+  margin: 10px;
+  width: 100%;
+}
+
+.wizard-page-form {
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.wizard-page-content {
+  width: calc(100% - 8px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-left: 8px;
+  margin-right: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+wizard-navigation-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex: 0 0 55px;
+}
+
+wizard-navigation-buttons > .k-button {
+  margin: 7px;
+  margin-right: 0;
+}
+
+wizard-page .input-field-has-error input {
+  background: rgb(249, 219, 219) !important;
+}
+
+wizard-page input.ng-invalid.ng-touched {
+  background-color: rgb(249, 219, 219);
+}
+
+wizard-page .required-validation-marker {
+  color: red;
+}
+
+wizard-page .async-validator-checking-message {
+  color: black !important;
+}
+
+wizard-page .validation-errors {
+  font-size: 10px;
+  color: red;
+}
+
+wizard-page .input-container {
+  padding: 5px;
+  overflow: visible;
+}
+
+wizard-page .input-label {
+}
+
+wizard-page .input-field-wrapper {
+}
+
+wizard-page .input-field {
+  width: 100%;
+}
+
+/*Middle screen*/
+@media (max-width: 800px) {
+  .navigation-wizard-menu {
+    display: none;
+  }
+}
+
+/*Small screen*/
+@media (max-width: 600px) {
+  wizard-page .input-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  wizard-page .input-label {
+    flex: none !important;
+  }
+
+  wizard-page .input-field-wrapper {
+    flex: none !important;
+  }
+}
+
+/*Big screen*/
+@media (min-width: 600px) {
+  wizard-page .input-container {
+    align-items: center;
+  }
+
+}

@@ -1,0 +1,4 @@
+<div class="photo">
+  <img ng-if="$ctrl.photo" ng-src="{{ $ctrl.photo }}" alt=""/>
+  <img ng-if="!$ctrl.photo && !$ctrl.loading && $ctrl.defaultPhoto" ng-src="{{ $ctrl.defaultPhoto }}" alt=""/>
+</div>

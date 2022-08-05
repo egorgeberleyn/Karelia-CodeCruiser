@@ -1,0 +1,39 @@
+.confirmation-dialog-content {
+  display: flex;
+  flex-direction: column;
+}
+.confirmation-dialog-message {
+  max-width: 600px;
+  .spinner {
+    position: relative;
+    height: 50px;
+  }
+  white-space: pre;
+}
+.confirmation-dialog-buttons-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.confirmation-dialog-details{
+  max-width: 600px;
+}
+.confirmation-dialog-details-collapse-button{
+  width: 14px;
+  height: 14px;
+}
+.confirmation-dialog-details-caption{
+  display: flex;
+  align-items: center;
+}
+.confirmation-dialog-details-caption-message{
+  margin-left: 5px;
+}
+
+.k-window {
+  &.title-center {
+    .k-window-titlebar {
+      text-align: center;
+    }
+  }
+} 

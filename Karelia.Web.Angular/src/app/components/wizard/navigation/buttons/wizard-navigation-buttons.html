@@ -1,0 +1,22 @@
+﻿<kendo-button class="wizard-navigation-button"
+                ng-show="$ctrl.backVisible()"
+                ng-click="$ctrl.backClicked()">
+    {{ "wizard_back_button" | translate }}
+</kendo-button>
+<kendo-button class="wizard-navigation-button"
+               ng-show="$ctrl.nextVisible()"
+               ng-disabled="$ctrl.nextDisabled()"
+               ng-click="$ctrl.nextClicked()">
+    {{ "wizard_next_button" | translate }}
+</kendo-button>
+<kendo-button class="wizard-navigation-button" ng-if="!$ctrl.hideFinishButton"
+              ng-disabled="$ctrl.finishDisabled()"
+              ng-show="$ctrl.finishVisible()"
+              ng-click="$ctrl.finishClicked()">
+    {{ "wizard_finish_button" | translate }}
+</kendo-button>
+<kendo-button class="wizard-navigation-button"
+              ng-click="$ctrl.closeClicked()">
+    {{ "wizard_cancel_button" | translate }}
+</kendo-button>
+

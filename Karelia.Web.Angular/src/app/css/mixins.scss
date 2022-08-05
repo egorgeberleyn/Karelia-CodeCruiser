@@ -1,0 +1,10 @@
+@mixin insertIconBefore($char, $fontsize: 'inherit') {
+
+  &:before {
+
+    content: '#{$char}';
+    font-family: "FontAwesome";
+    font-size: $fontsize;
+  }
+}
+

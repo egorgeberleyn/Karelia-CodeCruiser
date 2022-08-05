@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="app">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+  <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+  <script>
+    (function () {
+      if (window.module) module = window.module;
+    })();
+
+  </script>
+
+<div class="loading" id="loading">
+    <div class="loading-indicator">
+    </div>
+    <div class="loading-indicator2">
+    </div>
+  </div>
+
+  <spinner></spinner>
+
+  <div ui-view class="main-view" ng-strict-di></div>
+</body>
+
+</html>

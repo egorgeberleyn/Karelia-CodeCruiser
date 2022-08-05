@@ -1,0 +1,18 @@
+<div class="confirmation-dialog-content">
+  <div class="confirmation-dialog-message"><p>{{$ctrl.message}}</p></div>
+  <div ng-if="$ctrl.details" class="confirmation-dialog-details">
+    <div ng-click="$ctrl.detailsCollapsed = !$ctrl.detailsCollapsed" class="confirmation-dialog-details-caption">
+      <img class="confirmation-dialog-details-collapse-button" ng-if="$ctrl.detailsCollapsed" ng-src="assets/images/expand.png"/>
+      <img ng-if="!$ctrl.detailsCollapsed" class="confirmation-dialog-details-collapse-button" ng-src="assets/images/collapse.png"/>
+      <span class="confirmation-dialog-details-caption-message">{{ "confirmation_details_caption" | translate }}</span>
+    </div>
+    <div ng-show="!$ctrl.detailsCollapsed" class="confirmation-dialog-details-message">
+      <p>{{$ctrl.details}}</p>
+    </div>
+
+  </div>
+  <div class="confirmation-dialog-buttons-panel">
+    <kendo-button ng-click="$ctrl.okClicked()" ng-if="$ctrl.okText">{{$ctrl.okText}}</kendo-button>
+    <kendo-button ng-click="$ctrl.cancelClicked()" ng-if="$ctrl.cancelText">{{$ctrl.cancelText}}</kendo-button>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<form class="login-form" novalidate name="loginForm">
+    <div ng-show="$ctrl.loading" class="k-loading-image"></div>
+    <div class="login-form-content">
+        <div class="input-container">
+            <label class="k-label">{{  ::$ctrl.emailCaption }}</label>
+            <input class="k-input" ng-model="$ctrl.model.email" placeholder="{{  ::$ctrl.emailCaption }}" ng-change="$ctrl.error = false"  autocomplete="off">
+        </div>
+        <div class="input-container">
+            <label class="k-label">{{  ::$ctrl.loginCaption }}</label>
+            <input class="k-input" ng-model="$ctrl.model.login" placeholder="{{  ::$ctrl.loginCaption }}" ng-change="$ctrl.error = false"  autocomplete="off">
+        </div>
+        <!-- disables autocomplete for Mozilla --><input class="hidden" type="text" >
+        <!-- disables autocomplete for Mozilla --><input class="hidden" type="password" >
+        <div class="input-container">
+            <label class="k-label">{{  ::$ctrl.passwordCaption }}</label>
+            <input class="k-input" ng-model="$ctrl.model.password" placeholder="{{  ::$ctrl.passwordCaption }}" ng-change="$ctrl.error = false" type="password"  autocomplete="off">
+        </div>
+        <div class="input-container">
+            <label class="k-label">{{  ::$ctrl.confirmPasswordCaption }}</label>
+            <input class="k-input" ng-model="$ctrl.model.confirmPassword" placeholder="{{  ::$ctrl.confirmPasswordCaption }}" ng-change="$ctrl.error = false" type="password" autocomplete="off">
+        </div>
+        <span class="login-form-error" ng-show="$ctrl.error">{{ $ctrl.error }}</span>
+    </div>
+    <div class="login-form-links">
+        <a class="login-form-link k-link"
+           ui-sref="login({ parameters: $ctrl.$stateParams.parameters })">{{ ::$ctrl.loginLinkCaption }}</a>
+    </div>
+    <div class="login-form-button-panel"
+         ng-class="{ 'hidden-client-link' : !$ctrl.showDownloadClientLink }">
+        <input name="register"
+               class="k-primary k-button"
+               type="submit"
+               value="{{  ::$ctrl.registerButtonTitle }}"
+               ng-click="$ctrl.register($ctrl.model.email, $ctrl.model.login, $ctrl.model.password, $ctrl.model.confirmPassword)"
+               ng-disabled="!$ctrl.model.email || !$ctrl.model.login || !$ctrl.model.password || !$ctrl.model.confirmPassword || $ctrl.loading"/>
+
+    </div>
+</form>

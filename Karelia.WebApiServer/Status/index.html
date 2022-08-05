@@ -1,0 +1,43 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+	<!-- Favicons Start -->
+	<!-- In case image.ico -->
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+	<!-- In case image.png -->
+	<link rel="shortcut icon" type="image/png" href="favicon.png" />
+
+	<!-- Favicons End -->
+	<!-- CSS Start -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- CSS End -->
+	<!-- HTML5 Support for old ie browsers -->
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<!-- Javascript Start -->
+	<!-- Check if jQuery already exists -->
+	<script type="text/javascript">
+		(function () {
+			if (window.jQuery === undefined) {
+				document.write('<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"><\/script>');
+			}
+			else {
+				jQuery = window.jQuery;
+			}
+		})();
+	</script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			// Stuff to do as soon as the DOM is ready;
+		});
+	</script>
+	<!-- Javascript End -->
+</body>
+</html>

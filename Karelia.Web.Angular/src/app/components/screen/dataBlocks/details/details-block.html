@@ -1,0 +1,12 @@
+﻿<div ng-repeat="row in $ctrl.rows" class="details-row">
+    <span ng-repeat="field in row.fields" class="field">
+        <div ng-if="!field.hideEmpty || (field.value !== null && field.value.trim() !== '')">
+            <label class="k-label">{{field.title}}:</label>
+            <photo ng-if="field.isImage && !field.isFileLink && field.value" data="{{'data:image;base64,' + field.value}}"></photo>
+            <photo ng-if="field.isFileLink && field.isImage" file-link="field.value"></photo>
+            <file-link ng-if="field.isFileLink && !field.isImage" file-link="field.value"></file-link>
+            <span ng-if="field.isMultiline" style="white-space: pre; float: right;">{{ field.value }}</span>
+            <span ng-if="!field.isMultiline">{{ !field.isImage && !field.isFileLink? field.value: ''}}</span>
+        </div>
+    </span>
+</div>

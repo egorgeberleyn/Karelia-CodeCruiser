@@ -1,0 +1,210 @@
+﻿$toolbar_height: 43px;
+
+/* toolbar styles */
+.main-toolbar {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+
+    justify-content: space-between;
+    width: 100%;
+
+
+    border-left: none;
+    border-right: none;
+    border-top: none;
+
+    .main-toolbar-left {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        line-height: 2.9em;
+        margin-left: calc(10px - 0.2em); // 0.2 to compensate menu button widget
+    }
+    .main-toolbar-center {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        justify-content: center;
+		.logo-cc {
+			a {
+			  color: black;
+              text-decoration: none;
+			  display: flex;
+			  .logo {
+			    width: 50px;
+                height: 50px;			  
+			  }
+			  .logo-label {
+			    text-transform: uppercase;
+                font-weight: bold;
+                line-height: 50px;
+                margin-right: 5px;			  
+				margin-left: 5px;	
+                color: black;				
+			  }
+			}
+		}
+    }
+    .main-toolbar-right {
+        margin-right: -1px;
+    }
+
+    @media #{$mobile-isolate} {
+	
+	    .logo-cc { display: none;}
+
+        .main-toolbar-right { // collapse right menu to button
+            .k-menu > .k-item > .k-link {
+                font-size: 0.01px;
+
+                height: 30px;
+                display: flex;
+                align-items: center;
+                width: 40px;
+                justify-content: center;
+
+            }
+        }
+    }
+
+
+}
+
+
+
+@media (min-width: 700px) {
+    .right-toolbar-mobile-screen-action {
+        display: none;
+    }
+    .main-toolbar-center {
+        display: none;
+    }
+    .main-toolbar {
+        justify-content: space-between;
+    }
+}
+
+/*Grid toolbar*/
+toolbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 $toolbar_height;
+}
+
+.toolbar-menu-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    .toolbar-button {
+        display: flex;
+    }
+}
+.menu-content { // grid toolbar
+    .toolbar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        display: flex;
+        .right-toolbar-part {
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+            flex: 1 1 auto;
+            quick-search {
+                display: flex;
+                flex: 1 1 100%;
+                justify-content: flex-end;
+                flex-direction: row;
+                margin-right: 1px;
+                .clearable-input-wrapper {
+                    position: relative;
+                    &.empty{
+                        .clear-button {
+                            display: none;
+                        }
+                    }
+                    input {
+                        width: 100%;
+                        padding-right: 10px; 
+                    }
+                    .clear-button {
+                        cursor: pointer;
+                        position: absolute;
+                        top: 9px;
+                        right: 0px;
+                        background-color: transparent;
+                        border: none;
+                        i {
+                            font-style: normal;
+                        }
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+                }   
+                .quick-search-field-chooser {
+                    min-width: 200px;
+                    flex: 1 1 50%;
+                    width: 50%;
+                    min-width: 0px;
+                    max-width: 300px;
+                }             
+            }
+        }
+
+        .left-toolbar-part {
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+            overflow: hidden;
+            flex: 1 1 70%;
+        }
+    }
+}
+
+.k-toolbar .k-button-icontext {
+    padding-right: 7px; // override kendo common (to center button icons), 7px same as left
+}
+
+.left-toolbar {
+    display: flex;
+    flex-direction: row;
+    padding: 2px;
+}
+.right-toolbar {
+    display: flex;
+    flex-direction: row;
+}
+
+.toolbar-button {
+  margin: 2px;
+}
+
+.menu-button {
+	border: none;
+	width: 45px;
+    height: 45px;
+}
+
+.k-toolbar .menu-button.k-state-hover, .k-toolbar .menu-button.k-state-active:hover, .k-toolbar .menu-button.k-state-focused{
+	border: none;
+}
+
+.action-wrapper{
+	padding: 0 0.5em 0 0;
+}
+
+.toolbar-button.k-button.k-button-icontext{
+
+  img {
+    margin: auto;
+  }
+  &.toolbar-button-no-text{
+
+  }
+}

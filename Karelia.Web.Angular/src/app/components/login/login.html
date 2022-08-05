@@ -1,0 +1,37 @@
+<form class="login-form" novalidate name="loginForm">
+  <div ng-show="$ctrl.loading" class="k-loading-image"></div>
+  <div class="login-form-content">
+    <div class="input-container">
+      <label class="k-label">{{ ::$ctrl.nameCaption }}</label>
+      <input class="k-input" ng-model="$ctrl.model.name" placeholder="{{ ::$ctrl.nameCaption }}" ng-change="loginForm.$invalid = false">
+    </div>
+    <div class="input-container">
+      <label class="k-label">{{  ::$ctrl.passwordCaption }}</label>
+      <input class="k-input" ng-model="$ctrl.model.password" placeholder="{{  ::$ctrl.passwordCaption }}" ng-change="loginForm.$invalid = false" type="password">
+    </div>
+    <span class="login-form-error" ng-show="loginForm.$invalid">{{loginForm.$error.loginFailed}}</span>
+  </div>
+  <div class="login-form-links">
+    <a class="login-form-link k-link"
+       ng-if="$ctrl.showRegister"
+       ui-sref="register({ parameters: $ctrl.$stateParams.parameters })">{{ ::$ctrl.registerLinkCaption }}</a>
+    <a class="login-form-link k-link"
+       href=""
+       ng-if="$ctrl.showRestorePassword"
+       ui-sref="restore({ parameters: $ctrl.$stateParams.parameters })">{{ ::$ctrl.resetPasswordLinkCaption }}</a>
+  </div>
+  <div class="login-form-button-panel"
+       ng-class="{ 'hidden-client-link' : !$ctrl.showDownloadClientLink }">
+    <input type="button"
+           class="k-button"
+           ng-show="$ctrl.showDownloadClientLink"
+           ng-click="$ctrl.downloadClient()"
+           value="{{ ::$ctrl.downloadButtonCaption}}"/>
+    <input name="login"
+           class="k-primary k-button"
+           type="submit"
+           value="{{  ::$ctrl.okButtonTitle }}"
+           ng-click="$ctrl.submit($ctrl.model.name, $ctrl.model.password)"
+           ng-disabled="!$ctrl.model.name || !$ctrl.model.password || $ctrl.loading"/>
+  </div>
+</form>

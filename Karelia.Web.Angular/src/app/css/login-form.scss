@@ -1,0 +1,94 @@
+﻿.login-form {
+    display: flex;
+    height: auto;
+    align-content: space-around;
+    flex-direction: column;
+
+
+.login-form-error {
+    color: red
+}
+
+.login-form-toolbar > h2 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.login-form-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 10px;
+}
+
+.login-form-content > .input-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.login-form-content > .input-container > .k-label {
+    flex: 40;
+}
+
+.login-form-content > .input-container > .k-input {
+    flex: 60;
+}
+
+.login-form-button-panel > .k-button {
+    margin: 7px 0 7px 7px;
+}
+
+.login-form-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0 10px;
+    .login-form-link {
+        margin-left: 10px;
+    }
+}
+
+.login-form-button-panel {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 10px;
+    z-index: 3;
+    &.hidden-client-link {
+        justify-content: flex-end;
+    }
+}
+
+.k-window-title {
+    text-align: center;
+}
+
+@media #{$mobile-isolate} {
+    .login-form-content {
+         .k-label {
+        display: none;
+        }
+    }
+}
+
+@media #{$tablet} {
+    .login-form-content {
+        input.k-input {
+            &::-webkit-input-placeholder {
+                color: transparent;
+            }
+            &:-moz-input-placeholder {
+                color: transparent;
+            }
+            &::-moz-placeholder {
+                color: transparent;
+            }
+            &:-ms-input-placeholder {
+                color: transparent;
+            }
+       }
+   }
+}
+}

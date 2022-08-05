@@ -1,0 +1,28 @@
+﻿<div class="k-toolbar k-widget toolbar">
+    <div class="left-toolbar-part">
+        <div class="left-toolbar k-button-group">
+            <!--Menu button-->
+            <div class="toolbar-menu-button-wrapper">
+                <div class="toolbar-button k-button k-button-icontext" ng-show="$ctrl.showMenuButton" ng-click="$ctrl.menuButtonClicked($event)">                    
+                </div>
+                <div id="leftToolBarMenuTarget{{$id}}"></div>
+            </div>
+
+            <div class="toolbar-button toolbar-action k-button k-button-icontext action {{ action.className }}"
+                 ng-class="{'toolbar-button-no-text': !$ctrl.showText, 'k-state-disabled': !action.canInvoke}"
+                 ng-show="!$ctrl.showMenuButton"
+                 ng-repeat="action in $ctrl.actions"
+                 ng-click="action.canInvoke && action.invoke()"
+                 Title="{{ action.name }}">
+                <span ng-if="$ctrl.showText">
+                {{ action.name }}
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="right-toolbar-part">
+        <div class="right-toolbar">
+        </div>
+        <quick-search ng-if="$ctrl.quickSearchFields" on-searchable-text-changed="$ctrl.quickSearchTextChanged(text, selectedField)" fields="$ctrl.quickSearchFields"></quick-search>
+    </div>
+</div>

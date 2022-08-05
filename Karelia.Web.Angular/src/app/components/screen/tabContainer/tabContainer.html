@@ -1,0 +1,5 @@
+<ul class="tab-caption">
+    <li ng-repeat="tab in $ctrl.tabs" ng-class="{'k-state-active': $index === 0}">{{ tab.title }}</li>
+</ul>
+<div ng-transclude class="tab-control">
+</div>

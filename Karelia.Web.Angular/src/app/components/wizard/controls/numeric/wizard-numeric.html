@@ -1,0 +1,15 @@
+﻿<div class="input-container">
+    <wizard-input-label title="$ctrl.field.title" field-required="$ctrl.field.required"></wizard-input-label>
+    <div class="input-field-wrapper" ng-class="{ 'input-field-has-error': $ctrl.parentForm[$ctrl.field.name].$invalid && $ctrl.parentForm[$ctrl.field.name].$touched }">
+        <input class="input-field"
+               kendo-numeric-text-box
+               k-ng-model="$ctrl.model[$ctrl.field.name]"
+               ng-blur="$ctrl.blur()"
+               k-step="{{ $ctrl.field.step }}"
+               k-format="'{{ $ctrl.field.format !== undefined ? $ctrl.field.format : $ctrl.field.dataType === 3 ? 'n0' : 'n' }}'"
+               k-min="{{ $ctrl.field.min !== undefined ? $ctrl.field.min : 'null' }}"
+               k-max="{{ $ctrl.field.max !== undefined  ? $ctrl.field.max : 'null' }}"
+               k-ng-readonly="$ctrl.field.readonly"/>
+        <input name="{{ $ctrl.field.name }}" custom-validation type="hidden" ng-model="model[$ctrl.field.name]" />
+    </div>
+</div>

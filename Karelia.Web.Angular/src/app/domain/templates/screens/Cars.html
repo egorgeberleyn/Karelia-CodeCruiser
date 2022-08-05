@@ -1,0 +1,28 @@
+<screen context-state="contextState" blocks="blocks">
+    <split-container name="splitContainer">
+        <split-panel1 >
+            <grid-block name="carsGridBlock"/>
+        </split-panel1>
+        <split-panel2 >
+            <tab-container name="serviceTabPanel">
+                <tab-item name="visits">
+                    <split-container name="splitContainer3">
+                        <split-panel1 >
+                            <grid-block name="carServiceDataGrid"/>
+                        </split-panel1>
+                        <split-panel2 >
+                            <split-container name="splitContainer1">
+                                <split-panel1 >
+                                    <grid-block name="carServicePart"/>
+                                </split-panel1>
+                                <split-panel2 >
+                                    <grid-block name="carServiceWork"/>
+                                </split-panel2>
+                            </split-container>
+                        </split-panel2>
+                    </split-container>
+                </tab-item>
+            </tab-container>
+        </split-panel2>
+    </split-container>
+</screen>
